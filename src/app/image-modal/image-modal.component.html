@@ -1,0 +1,22 @@
+<div class="image-modal-container">
+  <button mat-icon-button class="close-button" (click)="close()">
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <div class="image-display">
+    <img [src]="currentImage.url" [alt]="currentImage.title" class="modal-img">
+  </div>
+
+  <button mat-icon-button class="prev-button" (click)="prevImage()" [disabled]="disablePrevButton" [class.disabled-btn]="disablePrevButton">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+  
+  <button mat-icon-button class="next-button" (click)="nextImage()" [disabled]="disableNextButton" [class.disabled-btn]="disableNextButton">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+
+  <button mat-icon-button class="download-button" (click)="downloadImage()">
+    <mat-icon>download</mat-icon>
+  </button>
+  
+</div>

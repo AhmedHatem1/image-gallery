@@ -1,0 +1,16 @@
+<div class="gallery-container">
+  <mat-form-field appearance="fill" class="category-filter">
+    <mat-label>Category</mat-label>
+    <mat-select [(value)]="selectedCategory" (selectionChange)="filterImages()">
+      <mat-option *ngFor="let category of categories" [value]="category">
+        {{ category }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="grid-gallery">
+    <div *ngFor="let image of filteredImages" class="grid-item" (click)="openImage(image)">
+      <img [src]="image.url" [alt]="image.title" class="gallery-img" />
+    </div>
+  </div>
+</div>
